@@ -209,3 +209,23 @@ Additionally, the ISV-based approach may offer practical advantages in terms of 
 - Utarini, A., et al. (2021). Efficacy of Wolbachia-infected mosquito deployments for the control of dengue. *New England Journal of Medicine*. 384: 2177–2186.
 - Zhang, G., et al. (2017). Insect-specific viruses and their potential to control arboviruses. *Virologica Sinica*. 32(1): 1–10.
 - Zheng, B., et al. (2022). Analytical thresholds for the population suppression of mosquitoes. *Journal of Mathematical Biology*. 84(2): 1–22.
+
+
+
+## Appendix: Repository Structure and Source Guide
+
+The modeling environment is organized into a modular pipeline to ensure reproducibility. To replicate the study results, scripts should be executed in numerical order.
+
+| File Name                               | Functional Description                                                                     | Output Metric                     |
+| :-------------------------------------- | :----------------------------------------------------------------------------------------- | :-------------------------------- |
+| **01_Data_Processing.R**          | Aggregates Rawalpindi clinical data and standardizes climate variables.                    | `processed_data.csv`            |
+| **02_Lag_Optimization.R**         | Runs a 35-combination grid search to identify optimal weather lags.                        | **Figure 2** (Heatmap)      |
+| **03_Intervention_Simulation.R**  | Defines the master SEIR-ISV ODE system with CFAV vertical transmission.                    | `seir_isv_engine.rds`           |
+| **04a_Scenario_Analysis_2023.R**  | Simulates 5 seasonal timing scenarios for the 2023 testing phase.                          | **Figure 3** (2023 Summary) |
+| **04b_Scenario_Analysis_2024.R**  | Validates scenario outcomes against the 2024 longitudinal testing set.                     | **Figure 4** (2024 Summary) |
+| **05_Statistical_Verification.R** | Generates robustness metrics (Pearson r, MSE) for the optimized lags.                      | `lag_robustness_stats.csv`      |
+| **06_Significance_Testing.R**     | Performs paired Wilcoxon tests to calculate scenario p-values.                             | `intervention_p_values.csv`     |
+| **07_Sensitivity_Analysis.R**     | Tests the impact of varying blocking efficiency ($\epsilon$) and transmission ($\nu$). | `sensitivity_matrix.csv`        |
+| **08_Statistical_Figures.R**      | Generates the final publication-quality figures for the dissertation.                      | **Figures 5 & 6**           |
+| **09_Summary_Generator.R**        | Compiles numerical results into unified summary tables.                                    | `final_study_summary.csv`       |
+| **10_Parameter_Documenter.R**     | Generates the verified technical parameter table with formal citations.                    |
