@@ -6,7 +6,6 @@ Dengue fever is a critical public health challenge in Pakistan, following a high
 
 This study proposes a proactive biological alternative: the release of mosquitoes carrying Insect-Specific Viruses (ISVs). These viruses exploit the principle of Superinfection Exclusion (SIE), where a primary ISV infection prevents the establishment of the dengue virus within the mosquito. By leveraging high vertical transmission rates, we hypothesize that a pre-monsoon release in March can fundamentally alter the transmission landscape of Rawalpindi.
 
-Data and Code Availability: The complete source code and longitudinal datasets (2013–2024) for this study are openly available at the following GitHub repository: [https://github.com/ishhu840/Infectious-Disease-Modelling-Applied-Methods-in-R](https://github.com/ishhu840/Infectious-Disease-Modelling-Applied-Methods-in-R)
 
 ### List of Abbreviations
 
